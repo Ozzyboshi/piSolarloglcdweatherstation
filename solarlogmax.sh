@@ -1,0 +1,3 @@
+#! /bin/bash
+	LETTURA=$(curl --silent 'http://10.0.0.20/getjp' -H 'Origin: http://10.0.0.20' -H 'Accept-Encoding: gzip, deflate' -H 'Accept-Language: it-CH,it-IT;q=0.9,it;q=0.8,en-US;q=0.7,en;q=0.6' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'Accept: */*' -H 'Referer: http://10.0.0.20/' -H 'X-Requested-With: XMLHttpRequest' -H 'Connection: keep-alive' --data '{"772":{"0":null}}' --compressed | python -c 'import sys, json; print json.load(sys.stdin)["772"]["0"].pop()[2]')
+	echo $LETTURA
